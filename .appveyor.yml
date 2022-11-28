@@ -41,5 +41,5 @@ after_build:
 test: off
 
 artifacts:
-  - path: upload
+  - path: c:\hestia\release\upload
     name: toshiki-hestia-appveyor-windows-x64
