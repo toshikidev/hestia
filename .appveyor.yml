@@ -1,0 +1,38 @@
+version: '{branch}-{build}'
+
+# Do not build on tags (GitHub only)
+skip_tags: true
+
+image: Visual Studio 2022
+
+branches:
+  except:  # blacklist
+    - coverity_scan
+
+environment:
+  nodejs_version: "16"
+
+# project directory
+clone_folder: *REPO_DIR
+
+clone_depth: 50
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install pnpm -g
+  - pnpm i
+
+build_script:
+  - cd "%REPO_DIR%"
+  - pnpm dist:win
+
+after_build:
+  - cd "%REPO_DIR%\release"
+  - MKDIR upload
+  - COPY \win-ia32-unpacked\ upload
+
+test: off
+
+artifacts:
+  - path: upload
+    name: toshiki-hestia-appveyor-windows-x64
