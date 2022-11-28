@@ -12,12 +12,16 @@ branches:
 environment:
   nodejs_version: "16"
 
+environment:
+  REPO_DIR: &REPO_DIR c:\hestia
+
 # project directory
-clone_folder: hestia
+clone_folder: *REPO_DIR
 
 clone_depth: 50
 
 install:
+  - cd "%REPO_DIR%"
   - ps: Install-Product node $env:nodejs_version
   - npm install pnpm -g
   - pnpm i
@@ -29,7 +33,7 @@ build_script:
 after_build:
   - cd "%REPO_DIR%\release"
   - MKDIR upload
-  - COPY \win-ia32-unpacked\ upload
+  - COPY \win-ia32-unpacked upload
 
 test: off
 
