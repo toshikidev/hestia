@@ -11,8 +11,6 @@ branches:
 
 environment:
   nodejs_version: "16"
-
-environment:
   REPO_DIR: &REPO_DIR c:\hestia
 
 # project directory
