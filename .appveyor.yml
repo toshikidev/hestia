@@ -24,7 +24,7 @@ install:
 
 build_script:
   - cd "%REPO_DIR%"
-  - pnpm dist:win
+  - pnpm dist:win np
 
 after_build:
   - cd "%REPO_DIR%\release"
