@@ -32,11 +32,11 @@ after_build:
   - cd "%REPO_DIR%\release"
   - MKDIR upload
   - ls -a
-  - COPY release\Hestia-v3.3.0-win-ia32.zip upload
-  - COPY release\Hestia-v3.3.0-win-x64.zip upload
-  - COPY release\Hestia_3.3.0.exe upload
-  - COPY release\Hestia_3.3.0.exe.blockmap upload
-  - COPY release\builder-debug.yml upload
+  - COPY Hestia-v3.3.0-win-ia32.zip upload
+  - COPY Hestia-v3.3.0-win-x64.zip upload
+  - COPY Hestia_3.3.0.exe upload
+  - COPY Hestia_3.3.0.exe.blockmap upload
+  - COPY builder-debug.yml upload
 
 test: off
 
