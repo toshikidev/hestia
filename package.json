@@ -15,7 +15,7 @@
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
     "dist:all": "yarn run dist -wml",
     "dist:win": "yarn run dist --win --ia32",
-    "dist:win": "yarn run dist --win --ia32 --publish never",
+    "dist:win-np": "yarn run dist --win --ia32 --publish never",
     "dist:mac": "yarn run dist -m",
     "dist:linux": "yarn run dist -l",
     "release": "yarn dist -wml -p always",
