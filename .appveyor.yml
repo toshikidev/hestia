@@ -26,12 +26,12 @@ install:
 
 build_script:
   - cd "%REPO_DIR%"
-  - pnpm dist:win-np
+  - pnpm dist:win
 
 after_build:
   - cd "%REPO_DIR%\release"
   - MKDIR upload
-  - COPY \win-ia32-unpacked upload
+  - ls -a
 
 test: off
 
