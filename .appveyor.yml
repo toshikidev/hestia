@@ -13,7 +13,7 @@ environment:
   nodejs_version: "16"
 
 # project directory
-clone_folder: *REPO_DIR
+clone_folder: hestia
 
 clone_depth: 50
 
